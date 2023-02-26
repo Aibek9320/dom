@@ -43,5 +43,21 @@
 // }
 // console.log(task8())
 
-// task9 
-console.log(document.querySelectorAll('#secret-password')[0].placeholder = 'you was hacked');
+// // task9 
+// console.log(document.querySelectorAll('#secret-password')[0].placeholder = 'you was hacked');
+//-------------------------------------------------------------------------------------------
+// Task 10
+// Один из способов хакерских атак - это XSS - Cross Site Scripting. Идея заключается в том, что хакер вставляет вредоносный код в незащищенное поле и он будет выполняться в браузерах жертвы. Сейчас вы такой хакер, который нашел уязвимость сайта.
+// У вас есть кнопка с айди button-send и поле с id = "secret-password". Ваша задача:
+// •	добавить на кнопку обработчик события click, который(все что происходит дальше - происходит внутри обработчика)
+// •	вызвать функцию-коллбек переданную в аргументе
+// •	дальше меняет текст внутри селектора .login-screen на You was hacked
+
+
+const btn = document.querySelectorAll('#button-send')
+
+btn.addEventListener("click", () => {
+    return Array.from(document.getElementById('button-send'))
+    .forEach(el => el.textContent='you was')
+})
+
