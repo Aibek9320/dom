@@ -54,10 +54,39 @@
 // •	дальше меняет текст внутри селектора .login-screen на You was hacked
 
 
-const btn = document.querySelectorAll('#button-send')
+// const btn = document.querySelector('#button-send')
 
-btn.addEventListener("click", () => {
-    return Array.from(document.getElementById('button-send'))
-    .forEach(el => el.textContent='you was')
-})
+// btn.addEventListener("click", () => {
+//     return Array.from(document.getElementsByClassName('login-screen'))
+//     .forEach(el => el.textContent='you was hacked')
+// })
 
+
+// task11
+// const app = ()=> {
+//     let div = document.createElement("div")
+//     div.setAttribute('id', 'just-text')
+//     div.append("Hello world")
+//      document.getElementById('append-div').append(div)
+// }
+// app()
+
+
+//task12
+// let ul = document.createElement("ul")
+// ul.setAttribute('id', 'list')
+// ul.append("li")
+// document.getElementById('append-div').append(ul)
+
+const list = () => {
+    const ul =  document.createElement('ul')
+     const apdiv = document.getElementById('append-div')
+    ul.setAttribute('id', 'list')
+    for(let i = 1; i < 11; i++){
+        const li = document.createElement('li')
+        li.textContent = 'child ' + i
+        ul.appendChild(li)
+    }
+    apdiv.appendChild(ul)
+}
+list()
